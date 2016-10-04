@@ -1,0 +1,9 @@
+version: '2'
+services:
+  embulk:
+    build: .
+    environment:
+      PLUGINS: "embulk-input-oracle embulk-output-mysql"
+    volumes:
+      - ./config:/etc/config
+      
