@@ -1,9 +1,9 @@
 version: '2'
 services:
   embulk:
-    build: .
+    image: honto/embulk
     environment:
       PLUGINS: "embulk-input-oracle embulk-output-mysql"
     volumes:
-      - ./config:/etc/config
+      - ./config:/etc/embulk
       
