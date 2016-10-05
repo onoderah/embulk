@@ -1,18 +1,18 @@
 in:
-  type: oracle
-  driver_path: /etc/embulk/ojdbc7.jar
-  host: localhost
-  user: myuser
-  password: ""
-  database: my_database
+  type: mysql
+  # driver_path: /etc/embulk/ojdbc7.jar
+  host: mysql
+  user: root
+  password: "password"
+  database: my_database1
   table: my_table
   select: "col1, col2, col3"
   where: "col4 != 'a'"
 out:
   type: mysql
-  host: localhost
+  host: mysql
   user: root
-  password: ""
-  database: my_database
+  password: "password"
+  database: my_database2
   table: my_table
   mode: insert

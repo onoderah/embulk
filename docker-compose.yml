@@ -3,7 +3,14 @@ services:
   embulk:
     image: honto/embulk
     environment:
-      PLUGINS: "embulk-input-oracle embulk-output-mysql"
+      PLUGINS: "embulk-input-mysql embulk-output-mysql"
     volumes:
       - ./config:/etc/embulk
-      
+    links:
+      - mysql
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - ./data:/var/lib/mysql
