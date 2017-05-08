@@ -4,6 +4,7 @@ services:
     image: honto/embulk
     environment:
       PLUGINS: "embulk-input-mysql embulk-output-mysql"
+      LOG_PATH: "--log /etc/embulk/log/embulk.log"
     volumes:
       - ./config:/etc/embulk
     links:
